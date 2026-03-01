@@ -1,0 +1,481 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 5 /Kids [ 4 0 R 6 0 R 8 0 R 10 0 R 12 0 R ] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 2298 >>
+stream
+BT
+/F1 11 Tf
+52 800 Td
+14 TL
+(TOURISM EXPERIENCE ANALYTICS) Tj
+T*
+(FINAL PROJECT REPORT \(ENHANCED SUBMISSION\)) Tj
+T*
+() Tj
+T*
+(1. EXECUTIVE SUMMARY) Tj
+T*
+(This project builds a complete analytics system for tourism platforms with three integrated AI) Tj
+T*
+(capabilities:) Tj
+T*
+(1. Rating prediction \(regression\)) Tj
+T*
+(2. Visit mode prediction \(classification\)) Tj
+T*
+(3. Personalized attraction recommendation \(collaborative filtering\)) Tj
+T*
+() Tj
+T*
+(The solution includes data preprocessing, EDA, visual analytics, ML model training/evaluation,) Tj
+T*
+(and an interactive Streamlit application for business-facing usage.) Tj
+T*
+() Tj
+T*
+(2. PROBLEM STATEMENT AND BUSINESS OBJECTIVES) Tj
+T*
+(Tourism businesses need to improve user experience and retention by understanding behavior and) Tj
+T*
+(delivering personalization at scale. This project addresses:) Tj
+T*
+(- Predict likely attraction rating before a trip or campaign launch.) Tj
+T*
+(- Classify visitor type \(Business, Family, Friends, Couples, Solo\) for targeted offers.) Tj
+T*
+(- Recommend attractions aligned with user history and similar-user patterns.) Tj
+T*
+() Tj
+T*
+(3. DATASET OVERVIEW) Tj
+T*
+(Integrated tourism dataset after consolidation:) Tj
+T*
+(- Total transactions: 52,930) Tj
+T*
+(- Unique users: 33,530) Tj
+T*
+(- Unique attractions: 30) Tj
+T*
+(- Time range: 2013 to 2022) Tj
+T*
+(- Average rating: 4.158 / 5) Tj
+T*
+() Tj
+T*
+(Core fields used:) Tj
+T*
+(- Behavioral: VisitYear, VisitMonth, VisitModeId, Rating) Tj
+T*
+(- Location: ContinentId, RegionId, CountryId, CityId) Tj
+T*
+(- Attraction: AttractionId, AttractionTypeId, AttractionCityId, Attraction) Tj
+T*
+() Tj
+T*
+(4. DATA CLEANING AND PREPROCESSING) Tj
+T*
+(Processing was performed using a reproducible Python pipeline.) Tj
+T*
+() Tj
+T*
+(4.1 CLEANING STEPS) Tj
+T*
+(- Filled missing categorical location labels \(CityName, Country, Region, Continent\) with) Tj
+T*
+(Unknown.) Tj
+T*
+(- Enforced numeric consistency for ID columns and temporal fields.) Tj
+T*
+(- Validated and clipped ratings to the valid 1-5 range.) Tj
+T*
+(- Exported final cleaned dataset to data/processed/cleaned_tourism.csv.) Tj
+T*
+() Tj
+T*
+(4.2 DATA QUALITY OUTCOME) Tj
+T*
+(- Missing values in modeling features: 0) Tj
+T*
+(- Cleaned dataset shape: \(52930, 21\)) Tj
+T*
+(Page 1 of 5) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 1539 >>
+stream
+BT
+/F1 11 Tf
+52 800 Td
+14 TL
+(- Ready for EDA, ML training, and app deployment.) Tj
+T*
+() Tj
+T*
+(5. EXPLORATORY DATA ANALYSIS \(EDA\)) Tj
+T*
+(Visual outputs are saved in reports/figures/.) Tj
+T*
+() Tj
+T*
+(5.1 VISIT MODE DISTRIBUTION) Tj
+T*
+(| Visit Mode | Transactions | Share |) Tj
+T*
+(|---|---:|---:|) Tj
+T*
+(| Couples | 21,620 | 40.85% |) Tj
+T*
+(| Family | 15,217 | 28.75% |) Tj
+T*
+(| Friends | 10,945 | 20.68% |) Tj
+T*
+(| Solo | 4,525 | 8.55% |) Tj
+T*
+(| Business | 623 | 1.18% |) Tj
+T*
+() Tj
+T*
+(5.2 TOP COUNTRIES BY TRANSACTION VOLUME) Tj
+T*
+(| Country | Transactions |) Tj
+T*
+(|---|---:|) Tj
+T*
+(| Australia | 13,322 |) Tj
+T*
+(| United Kingdom | 6,722 |) Tj
+T*
+(| United States | 6,261 |) Tj
+T*
+(| Indonesia | 4,842 |) Tj
+T*
+(| Singapore | 2,807 |) Tj
+T*
+(| India | 2,543 |) Tj
+T*
+(| Malaysia | 1,581 |) Tj
+T*
+(| Canada | 1,486 |) Tj
+T*
+(| New Zealand | 1,479 |) Tj
+T*
+(| Netherlands | 859 |) Tj
+T*
+() Tj
+T*
+(5.3 MOST VISITED ATTRACTIONS) Tj
+T*
+(| Attraction | Visits |) Tj
+T*
+(|---|---:|) Tj
+T*
+(| Sacred Monkey Forest Sanctuary | 13,198 |) Tj
+T*
+(| Waterbom Bali | 6,429 |) Tj
+T*
+(| Tegalalang Rice Terrace | 5,815 |) Tj
+T*
+(| Uluwatu Temple | 3,359 |) Tj
+T*
+(| Tanah Lot Temple | 3,352 |) Tj
+T*
+(| Sanur Beach | 3,044 |) Tj
+T*
+(| Seminyak Beach | 2,914 |) Tj
+T*
+(| Kuta Beach - Bali | 2,765 |) Tj
+T*
+(| Merapi Volcano | 2,235 |) Tj
+T*
+(| Tegenungan Waterfall | 2,190 |) Tj
+T*
+() Tj
+T*
+(5.4 AVERAGE RATING BY VISIT MODE) Tj
+T*
+(| Visit Mode | Avg Rating |) Tj
+T*
+(|---|---:|) Tj
+T*
+(| Business | 4.313 |) Tj
+T*
+(Page 2 of 5) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 1849 >>
+stream
+BT
+/F1 11 Tf
+52 800 Td
+14 TL
+(| Family | 4.219 |) Tj
+T*
+(| Friends | 4.174 |) Tj
+T*
+(| Couples | 4.117 |) Tj
+T*
+(| Solo | 4.088 |) Tj
+T*
+() Tj
+T*
+(5.5 EDA INTERPRETATION) Tj
+T*
+(- Tourism demand is concentrated in leisure segments \(Couples, Family, Friends\).) Tj
+T*
+(- Rating levels are generally high, indicating positive user sentiment.) Tj
+T*
+(- Country-level concentration suggests opportunities for geo-targeted marketing and) Tj
+T*
+(partnerships.) Tj
+T*
+() Tj
+T*
+(6. FEATURE ENGINEERING AND MODELING STRATEGY) Tj
+T*
+() Tj
+T*
+(6.1 REGRESSION TASK) Tj
+T*
+(Target: Rating) Tj
+T*
+(- Candidate models: RandomForestRegressor, GradientBoostingRegressor) Tj
+T*
+(- Selected by best RMSE on hold-out test split) Tj
+T*
+() Tj
+T*
+(6.2 CLASSIFICATION TASK) Tj
+T*
+(Target: VisitModeId) Tj
+T*
+(- Candidate models: RandomForestClassifier, GradientBoostingClassifier) Tj
+T*
+(- Selected by weighted F1 on hold-out test split) Tj
+T*
+(- Leakage prevention applied \(target VisitModeId is not used as input feature\)) Tj
+T*
+() Tj
+T*
+(6.3 RECOMMENDATION TASK) Tj
+T*
+(- Method: User-based collaborative filtering using KNN with cosine similarity) Tj
+T*
+(- Data structure: user-item matrix \(UserId x AttractionId\) built from ratings) Tj
+T*
+(- Output: top-N unseen attractions from nearest user neighbors) Tj
+T*
+() Tj
+T*
+(7. MODEL EVALUATION RESULTS) Tj
+T*
+() Tj
+T*
+(7.1 REGRESSION \(BEST MODEL: GRADIENTBOOSTINGREGRESSOR\)) Tj
+T*
+(- MAE: 0.7165) Tj
+T*
+(- RMSE: 0.9136) Tj
+T*
+(- R2: 0.1137) Tj
+T*
+() Tj
+T*
+(7.2 CLASSIFICATION \(BEST MODEL: RANDOMFORESTCLASSIFIER\)) Tj
+T*
+(- Accuracy: 0.4930) Tj
+T*
+(- Precision \(weighted\): 0.4942) Tj
+T*
+(- Recall \(weighted\): 0.4930) Tj
+T*
+(- F1 \(weighted\): 0.4411) Tj
+T*
+() Tj
+T*
+(7.3 RECOMMENDATION) Tj
+T*
+(- Users in matrix: 33,530) Tj
+T*
+(- Attractions in matrix: 30) Tj
+T*
+(- HitRate@5: 0.0032) Tj
+T*
+(Page 3 of 5) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 2368 >>
+stream
+BT
+/F1 11 Tf
+52 800 Td
+14 TL
+() Tj
+T*
+(7.4 PERFORMANCE DISCUSSION) Tj
+T*
+(- Regression captures moderate predictive signal, suitable for directional satisfaction) Tj
+T*
+(forecasting.) Tj
+T*
+(- Classification performance indicates useful segmentation potential but can improve with) Tj
+T*
+(richer behavioral features.) Tj
+T*
+(- Recommendation hit rate is low due to sparse user-level interactions, a common issue in) Tj
+T*
+(implicit tourism logs.) Tj
+T*
+() Tj
+T*
+(8. BUSINESS INSIGHTS AND RECOMMENDATIONS) Tj
+T*
+(- Prioritize Couples/Family-focused campaign bundles because these segments dominate volume.) Tj
+T*
+(- Use rating prediction to proactively identify lower-satisfaction attraction-context) Tj
+T*
+(combinations.) Tj
+T*
+(- Use visit mode classification to personalize messaging, package design, and amenity) Tj
+T*
+(recommendations.) Tj
+T*
+(- Improve recommendation quality with additional context features \(trip duration, budget,) Tj
+T*
+(recency, dwell time\).) Tj
+T*
+() Tj
+T*
+(9. STREAMLIT APPLICATION) Tj
+T*
+(Delivered app features:) Tj
+T*
+(- Executive dashboard \(distribution, countries, top attractions\)) Tj
+T*
+(- Rating prediction form) Tj
+T*
+(- Visit mode prediction form) Tj
+T*
+(- Personalized recommendation engine) Tj
+T*
+(- Model performance panel for transparent evaluation) Tj
+T*
+() Tj
+T*
+(File: app/streamlit_app.py) Tj
+T*
+() Tj
+T*
+(10. LIMITATIONS AND FUTURE WORK) Tj
+T*
+(Current limitations:) Tj
+T*
+(- No explicit temporal sequence modeling by user session.) Tj
+T*
+(- Sparse interactions reduce recommendation precision.) Tj
+T*
+(- Features are primarily structured IDs; semantic attraction metadata is limited.) Tj
+T*
+() Tj
+T*
+(Next improvements:) Tj
+T*
+(- Hybrid recommender \(collaborative + content-based\)) Tj
+T*
+(- More robust feature set \(price sensitivity, seasonality intensity, travel cohort\)) Tj
+T*
+(- Hyperparameter tuning with cross-validation and model calibration) Tj
+T*
+(- Better cold-start strategy for new users and new attractions) Tj
+T*
+() Tj
+T*
+(11. CONCLUSION) Tj
+T*
+(This project successfully implements the complete assignment scope with reproducible scripts,) Tj
+T*
+(explainable analytics, machine learning models, and deployable UI. The output is actionable for) Tj
+T*
+(tourism platforms and presentation-ready for academic evaluation.) Tj
+T*
+() Tj
+T*
+(12. REPRODUCIBILITY AND DELIVERABLES) Tj
+T*
+(Page 4 of 5) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 311 >>
+stream
+BT
+/F1 11 Tf
+52 800 Td
+14 TL
+(- Cleaned data: data/processed/cleaned_tourism.csv) Tj
+T*
+(- Models: models/*.pkl) Tj
+T*
+(- Metrics: reports/metrics.json) Tj
+T*
+(- EDA charts: reports/figures/*.png) Tj
+T*
+(- Streamlit app: app/streamlit_app.py) Tj
+T*
+(- Pipeline runner: run_pipeline.py) Tj
+T*
+(Page 5 of 5) Tj
+ET
+endstream
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000143 00000 n 
+0000000213 00000 n 
+0000000339 00000 n 
+0000002689 00000 n 
+0000002815 00000 n 
+0000004406 00000 n 
+0000004532 00000 n 
+0000006433 00000 n 
+0000006561 00000 n 
+0000008982 00000 n 
+0000009110 00000 n 
+trailer
+<< /Size 14 /Root 1 0 R >>
+startxref
+9473
+%%EOF

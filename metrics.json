@@ -1,0 +1,50 @@
+{
+  "regression": {
+    "all_models": {
+      "RandomForestRegressor": {
+        "mae": 0.7161179526200151,
+        "rmse": 0.9153210324674173,
+        "r2": 0.11042876660278789
+      },
+      "GradientBoostingRegressor": {
+        "mae": 0.7165284207306415,
+        "rmse": 0.9136177964009274,
+        "r2": 0.11373632767441588
+      }
+    },
+    "best_model": "GradientBoostingRegressor",
+    "best_metrics": {
+      "mae": 0.7165284207306415,
+      "rmse": 0.9136177964009274,
+      "r2": 0.11373632767441588
+    }
+  },
+  "classification": {
+    "all_models": {
+      "RandomForestClassifier": {
+        "accuracy": 0.49300963536746645,
+        "precision_weighted": 0.49424021323909934,
+        "recall_weighted": 0.49300963536746645,
+        "f1_weighted": 0.4411473805115912
+      },
+      "GradientBoostingClassifier": {
+        "accuracy": 0.47846211978084263,
+        "precision_weighted": 0.4445709852176593,
+        "recall_weighted": 0.47846211978084263,
+        "f1_weighted": 0.4204443881492422
+      }
+    },
+    "best_model": "RandomForestClassifier",
+    "best_metrics": {
+      "accuracy": 0.49300963536746645,
+      "precision_weighted": 0.49424021323909934,
+      "recall_weighted": 0.49300963536746645,
+      "f1_weighted": 0.4411473805115912
+    }
+  },
+  "recommendation": {
+    "users_in_matrix": 33530,
+    "items_in_matrix": 30,
+    "hitrate_at_5": 0.0032021096251648143
+  }
+}
